@@ -11,7 +11,7 @@ conda create -n zoro python=3.10
 ```console 
 conda activate zoro
 ```
-- run : 
+- install requirements: 
 
 ```console 
 pip install -r requirements.txt
