@@ -1,5 +1,6 @@
-from fastapi import APIRouter, Depends, HTTPException
+from fastapi import APIRouter, Depends, HTTPException, Response, BackgroundTasks
 
+from zoro.services.badge.generate_badge import generate_badge_pdf
 
 router = APIRouter(
     prefix="/badge",
@@ -27,3 +28,14 @@ async def get_badge(item_id: str):
     if item_id not in fake_items_db:
         raise HTTPException(status_code=404, detail="Item not found")
     return {"name": fake_items_db[item_id]["name"], "item_id": item_id}
+
+
+@router.get("/pdf/")
+def get_pdf(item_id: str):
+    """
+    Ito hakana ny badge pdf
+    """
+    ite = item_id
+    pdf = generate_badge_pdf()
+    headers = {"Content-Disposition": 'attachment; filename="out.pdf"'}
+    return Response(pdf, headers=headers, media_type="application/pdf")
