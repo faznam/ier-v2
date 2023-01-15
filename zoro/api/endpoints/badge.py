@@ -29,8 +29,13 @@ async def get_badge(item_id: str):
         raise HTTPException(status_code=404, detail="Item not found")
     return {"name": fake_items_db[item_id]["name"], "item_id": item_id}
 
-@router.get("/pdf")
-def get_pdf(background_tasks: BackgroundTasks):
+
+@router.get("/pdf/")
+def get_pdf(item_id: str):
+    """
+    Ito hakana ny badge pdf
+    """
+    ite = item_id
     pdf = generate_badge_pdf()
-    headers = {'Content-Disposition': 'inline; filename="out.pdf"'}
-    return Response(pdf, headers=headers, media_type='application/pdf')
+    headers = {"Content-Disposition": 'attachment; filename="out.pdf"'}
+    return Response(pdf, headers=headers, media_type="application/pdf")

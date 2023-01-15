@@ -1,6 +1,6 @@
 from fastapi import FastAPI
 from starlette.responses import RedirectResponse
-from .routers import badge
+from .api.endpoints import badge
 
 app = FastAPI()
 
