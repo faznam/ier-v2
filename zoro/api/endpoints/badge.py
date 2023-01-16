@@ -1,6 +1,6 @@
-from fastapi import APIRouter, Depends, HTTPException, Response, BackgroundTasks
+from fastapi import APIRouter, HTTPException, Response
 
-from zoro.services.badge.generate_badge import generate_badge_pdf
+from zoro.api.service.badge.generate_badge import generate_badge_pdf
 
 router = APIRouter(
     prefix="/badge",
