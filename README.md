@@ -1,6 +1,6 @@
 # ier-v2
 
-## another change here
+## another change here:
 -test
 
 ## setup
@@ -14,7 +14,7 @@ conda create -n zoro python=3.10
 ```console 
 conda activate zoro
 ```
-- install requirements: 
+- run : 
 
 ```console 
 pip install -r requirements.txt
