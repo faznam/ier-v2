@@ -1,9 +1,15 @@
 # ier-v2
 
+<<<<<<< HEAD
 ## another change here
 -test
 
 ## setup
+=======
+## test push
+
+## setup 
+>>>>>>> 741324f (edit readme)
 - create new env (whatever its name) : 
 
 ```console 
@@ -14,7 +20,7 @@ conda create -n zoro python=3.10
 ```console 
 conda activate zoro
 ```
-- run : 
+- install requirements: 
 
 ```console 
 pip install -r requirements.txt
